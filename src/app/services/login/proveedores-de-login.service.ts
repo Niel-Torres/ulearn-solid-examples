@@ -1,4 +1,4 @@
-import { Usuario } from './../../interfaces/users/usuario';
+import { UsuarioI } from './../../interfaces/users/usuario';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,11 +8,11 @@ export class ProveedoresDeLoginService {
 
   constructor() { }
 
-  login_Google(user: Usuario) {
+  login_Google(user: UsuarioI) {
     // Hacer login vía Google
   }
 
-  login_Facebook(user: Usuario) {
+  login_Facebook(user: UsuarioI) {
     // Hacer login vía Facebook
   }
 }

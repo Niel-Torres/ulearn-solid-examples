@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Usuario } from 'src/app/interfaces/users/usuario';
-import { ProveedoresDeLoginService } from 'src/app/services/login/proveedores-de-login.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,25 +7,18 @@ import { ProveedoresDeLoginService } from 'src/app/services/login/proveedores-de
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email!: string;
-  password!: string;
-  canal!: string;
+  email: string;
+  password: string;
 
   constructor(
-    private proveedoresDeLoginService: ProveedoresDeLoginService
-  ) { }
+    private loginService: LoginService
+  ) { 
+    this.email='';
+    this.password='';
+  }
 
   login(){
-    const user: Usuario = {email: this.email, password: this.password};
-
-    switch(this.canal) {
-      case "google":
-        this.proveedoresDeLoginService.login_Google(user);
-        break;
-      case "facebook":
-        this.proveedoresDeLoginService.login_Facebook(user);
-        break      
-    }
+   // this.loginService......
   }
 
 
