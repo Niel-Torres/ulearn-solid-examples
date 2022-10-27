@@ -11,7 +11,7 @@ export class LoginService {
     private http: HttpClient
   ) { }
 
-   loginService(user: {}): Observable<any>{
+   doLoginHttp(user: {}): Observable<any>{
     return this.http.post("http://request.in/api/login", user)
   }
 }
