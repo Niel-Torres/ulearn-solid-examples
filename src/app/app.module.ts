@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterUsersComponent } from './components/register-users/register-users.component';
 import { CuentaBancariaBasicaComponent } from './components/cuentas/cuentaBancariaBasica/cuenta-bancaria-basica/cuenta-bancaria-basica.component';
 import { CuentaBancariaPremiumComponent } from './components/cuentas/cuentaBancariaPremium/cuenta-bancaria-premium/cuenta-bancaria-premium.component';
+import { CuentaLargoPlazoComponent } from './components/cuentas/cuentaLargoPlazo/cuenta-largo-plazo/cuenta-largo-plazo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CuentaBancariaPremiumComponent } from './components/cuentas/cuentaBanca
     LoginComponent,
     RegisterUsersComponent,
     CuentaBancariaBasicaComponent,
-    CuentaBancariaPremiumComponent
+    CuentaBancariaPremiumComponent,
+    CuentaLargoPlazoComponent
   ],
   imports: [
     BrowserModule,
