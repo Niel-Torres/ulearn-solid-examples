@@ -1,5 +1,5 @@
 import { CuentaLargoPlazoComponent } from './../../components/cuentas/cuentaLargoPlazo/cuenta-largo-plazo/cuenta-largo-plazo.component';
-import { CuentaBancaria } from './../../interfaces/cuentas/cuenta-bancaria';
+import { CuentaBancariaRetirable } from 'src/app/interfaces/cuentas/cuenta-bancaria-retirable';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,10 +12,8 @@ export class RetirosService {
   constructor() { }
 
   // Cargar gastos anuales
-  cargarGastosAdministrativos(cuentas: Array<CuentaBancaria>) {
+  cargarGastosAdministrativos(cuentas: Array<CuentaBancariaRetirable>) {
     cuentas.forEach(cuenta => {
-      // No cargar gastos administrativos a cuentas largo plazo
-      if(cuentas !instanceof CuentaLargoPlazoComponent)
         cuenta.retirar(this.MONTO_GASTO_ADMIN);
     });
     

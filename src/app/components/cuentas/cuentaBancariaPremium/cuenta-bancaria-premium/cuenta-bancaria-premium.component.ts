@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CuentaBancaria } from 'src/app/interfaces/cuentas/cuenta-bancaria';
+import { CuentaBancariaRetirable } from 'src/app/interfaces/cuentas/cuenta-bancaria-retirable';
 
 @Component({
   selector: 'app-cuenta-bancaria-premium',
   templateUrl: './cuenta-bancaria-premium.component.html',
   styleUrls: ['./cuenta-bancaria-premium.component.css']
 })
-export class CuentaBancariaPremiumComponent implements CuentaBancaria {
+export class CuentaBancariaPremiumComponent implements CuentaBancariaRetirable {
   
   private saldo: number = 0;
   private puntos: number = 0;

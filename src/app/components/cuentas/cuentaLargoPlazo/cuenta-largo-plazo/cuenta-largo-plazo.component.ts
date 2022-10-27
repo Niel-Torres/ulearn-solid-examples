@@ -16,7 +16,4 @@ export class CuentaLargoPlazoComponent implements CuentaBancaria{
     this.saldo += monto;
   }
 
-  retirar(monto: number) {
-    throw new Error('No se permite la operación de retiro');
-  }
 }
