@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from 'src/app/services/login/login.service';
+import { Usuario } from 'src/app/interfaces/users/usuario';
+import { ProveedoresDeLoginService } from 'src/app/services/login/proveedores-de-login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +8,25 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email: string;
-  password: string;
+  email!: string;
+  password!: string;
+  canal!: string;
 
   constructor(
-    private loginService: LoginService
-  ) { 
-    this.email='';
-    this.password='';
-  }
+    private proveedoresDeLoginService: ProveedoresDeLoginService
+  ) { }
 
   login(){
-    const user = {email: this.email, password: this.password};
-    this.loginService.doLoginHttp(user)
-      .subscribe(data => {
-        console.log(data);
-      });
+    const user: Usuario = {email: this.email, password: this.password};
+
+    switch(this.canal) {
+      case "google":
+        this.proveedoresDeLoginService.login_Google(user);
+        break;
+      case "facebook":
+        this.proveedoresDeLoginService.login_Facebook(user);
+        break      
+    }
   }
 
 
