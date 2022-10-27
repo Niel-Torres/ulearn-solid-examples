@@ -19,7 +19,7 @@ export class LoginComponent {
 
   login(){
     const user = {email: this.email, password: this.password};
-    this.loginService.loginService(user)
+    this.loginService.doLoginHttp(user)
       .subscribe(data => {
         console.log(data);
       });
