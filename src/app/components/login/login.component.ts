@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ export class LoginComponent {
   password: string;
 
   constructor(
-    private http: HttpClient
+    private loginService: LoginService
   ) { 
     this.email='';
     this.password='';
@@ -20,19 +19,13 @@ export class LoginComponent {
 
   login(){
     const user = {email: this.email, password: this.password};
-    this.loginService(user)
+    this.loginService.loginService(user)
       .subscribe(data => {
         console.log(data);
       });
   }
 
-  loginService(user: {}): Observable<any>{
-    return this.http.post("http://request.in/api/login", user)
-  }
 
-  registerUser(){
-    // Funcionality to create user
-  }  
 
 
 }
